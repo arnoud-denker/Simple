@@ -13,8 +13,8 @@
 #include "sdkconfig.h"
 #include <esp_http_server.h>
 #include <WifiHttpsServer.h>
+#include "../../../components/wifi/WifiCtrMode.h"
 
-#include "WifiMode.h"
 #include "WifiSTA.h"
 #include "WifiAP.h"
 
@@ -141,7 +141,7 @@ esp_err_t WifiUserland::wifi_init_wifiAP()
 	//////	wifiEngineAP->wifiAP_init_softAP();
 
 
-	pWifiAP = new WifiAP(this, WifiMode::WifiAP, "ballast", default_wifiAP_Password );
+	pWifiAP = new WifiAP(this, WifiCtrMode::WifiAP, "ballast", default_wifiAP_Password );
 	return pWifiAP->wifi_init();
 	}
 
@@ -151,7 +151,7 @@ esp_err_t WifiUserland::wifi_init_wifiAP()
 
 esp_err_t WifiUserland::wifi_init_wifiSTA()
 	{
-	pWifiSTA = new WifiSTA(this, WifiMode::WifiSTA, "ballast", default_wifiSTA_SSIDname, default_wifiSTA_Password);
+	pWifiSTA = new WifiSTA(this, WifiCtrMode::WifiSTA, "ballast", default_wifiSTA_SSIDname, default_wifiSTA_Password);
 	return pWifiSTA->wifi_init();
 	}
 

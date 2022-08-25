@@ -188,7 +188,7 @@ esp_err_t get_handlerAP_PageSubmit(httpd_req_t *req)
 //----------------------------------------------------
 //----------------------------------------------------
 
-WifiAP::WifiAP(WifiListner * _listner, WifiMode _wifimode, const char * _pHostname, const char * _pAPPAssword) :
+WifiAP::WifiAP(WifiListner * _listner, WifiCtrMode _wifimode, const char * _pHostname, const char * _pAPPAssword) :
 	   WifiEngine( _listner, _wifimode, _pHostname, _pAPPAssword)
 	{
 

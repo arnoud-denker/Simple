@@ -8,9 +8,9 @@
 //----------------------------------------------------
 //----------------------------------------------------
 //todo fatal abort
-WifiEngine::WifiEngine(WifiListner * _pWifiListner, WifiMode _wifimode, const char * _pHostname, const char * _pAPName, const char * _pAPPassword)
+WifiEngine::WifiEngine(WifiListner * _pWifiListner, WifiCtrMode _wifimode, const char * _pHostname, const char * _pAPName, const char * _pAPPassword)
 	{
-	if (_wifimode == WifiMode::WifiAP)
+	if (_wifimode == WifiCtrMode::WifiAP)
 		{
 		ERR("To many parameters for AP mode");
 	//	fatal_abort(0x28e44332);
@@ -38,9 +38,9 @@ WifiEngine::WifiEngine(WifiListner * _pWifiListner, WifiMode _wifimode, const ch
 
 
 ////todo fatal_abort
-WifiEngine::WifiEngine(WifiListner * _pWifiListner, WifiMode _wifimode, const char * _pHostname, const char * _pAPPassword)
+WifiEngine::WifiEngine(WifiListner * _pWifiListner, WifiCtrMode _wifimode, const char * _pHostname, const char * _pAPPassword)
 	{
-	if (_wifimode == WifiMode::WifiSTA)
+	if (_wifimode == WifiCtrMode::WifiSTA)
 		{
 		ERR("Not enough parameters for STA mode");
 		//fatal_abort(0x28e44332);
@@ -235,11 +235,11 @@ esp_err_t WifiEngine::wifi_init()
     	}
 
     esp_netif_t* pNetif = nullptr;
-	if (wifimode == WifiMode::WifiAP)
+	if (wifimode == WifiCtrMode::WifiAP)
 		{
 		pNetif = esp_netif_create_default_wifi_ap();
 		}
-	else if (wifimode == WifiMode::WifiSTA)
+	else if (wifimode == WifiCtrMode::WifiSTA)
 		{
 		pNetif = esp_netif_create_default_wifi_sta();
 		}
@@ -304,7 +304,7 @@ esp_err_t WifiEngine::wifi_init()
 														pInstance_got_ip
 														));
 
-	if (wifimode == WifiMode::WifiAP)
+	if (wifimode == WifiCtrMode::WifiAP)
 		{
 		esp_netif_dhcps_stop(pNetif);
 		esp_netif_set_ip_info(pNetif, pIp4address);
@@ -327,7 +327,7 @@ esp_err_t WifiEngine::wifi_init()
 //      captdnsInit();
 //	    wifiAP_startWebserver();
 		}
-	else if (wifimode == WifiMode::WifiSTA)
+	else if (wifimode == WifiCtrMode::WifiSTA)
 		{
 	    wifi_config_t wifiSTA_config = {};
 
@@ -474,11 +474,11 @@ void WifiEngine::wifi_set_currentWifiEvent(int32_t _wifiEvent)
 //----------------------------------------------------
 //----------------------------------------------------
 
-const char * WifiEngine::get_wifimode_str(WifiMode _mode)
+const char * WifiEngine::get_wifimode_str(WifiCtrMode _mode)
 	{
-	if (_mode == WifiMode::WifiAP)
+	if (_mode == WifiCtrMode::WifiAP)
 		return "WifiAP";
-	else if (_mode == WifiMode::WifiSTA)
+	else if (_mode == WifiCtrMode::WifiSTA)
 		return "WifiSTA";
 	return "Unknown";
 	}

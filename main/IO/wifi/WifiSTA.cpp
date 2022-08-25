@@ -9,8 +9,9 @@
 
 #include "esp_err.h"
 #include <esp_http_server.h>
+
+#include "../../../components/wifi/WifiCtrMode.h"
 #include "WifiEngine.h"
-#include "WifiMode.h"
 #include "alog.h"
 
 #define TAG "WIFISTA"
@@ -415,7 +416,7 @@ esp_err_t get_handlerSTA_PageSubmit_(httpd_req_t *req)
 ////
 
 
-WifiSTA::WifiSTA(WifiListner * _listner, WifiMode _wifimode, const char * _pHostname, const char * _pAPName, const char * _pAPPAssword) :
+WifiSTA::WifiSTA(WifiListner * _listner, WifiCtrMode _wifimode, const char * _pHostname, const char * _pAPName, const char * _pAPPAssword) :
 		WifiEngine( _listner, _wifimode, _pHostname, _pAPName, _pAPPAssword)
 	{
 

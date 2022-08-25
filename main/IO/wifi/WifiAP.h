@@ -11,8 +11,9 @@
 #include "esp_err.h"
 
 #include <esp_http_server.h>
+
+#include "../../../components/wifi/WifiCtrMode.h"
 #include "WifiEngine.h"
-#include "WifiMode.h"
 
 extern const uint8_t aproot_html_start[] asm("_binary_aproot_html_start");
 extern const uint8_t aproot_html_end[] asm("_binary_aproot_html_end");
@@ -26,7 +27,7 @@ esp_err_t get_handlerAP_PageSubmit(httpd_req_t *req);
 class WifiAP : public WifiEngine
 	{
 	public:
-		WifiAP(WifiListner * _listner, WifiMode _wifimode, const char * _pHostname, const char * _pAPPAssword);
+		WifiAP(WifiListner * _listner, WifiCtrMode _wifimode, const char * _pHostname, const char * _pAPPAssword);
 		virtual ~WifiAP();
 
 	private:

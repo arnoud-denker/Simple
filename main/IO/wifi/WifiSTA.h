@@ -9,10 +9,9 @@
 #define MAIN_MKII_IO_WIFI_WIFISTA_H_
 
 #include "WifiEngine.h"
-#include "WifiMode.h"
-
 #include <esp_err.h>
 #include <esp_http_server.h>
+#include "../../../components/wifi/WifiCtrMode.h"
 
 //#define readBufSize 1024*6
 //#define sendBufSize 256
@@ -55,7 +54,7 @@ void get_staUserSendDataUpdateTask_(void* pvParameters);
 class WifiSTA : public WifiEngine
 	{
 	public:
-		WifiSTA(WifiListner * _listner, WifiMode _wifimode, const char * _pHostname, const char * _pAPName, const char * _pAPPAssword);
+		WifiSTA(WifiListner * _listner, WifiCtrMode _wifimode, const char * _pHostname, const char * _pAPName, const char * _pAPPAssword);
 		virtual ~WifiSTA();
 
 		void staUserSendDataUpdateTask();

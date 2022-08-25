@@ -14,12 +14,11 @@
 #include "WifiListner.h"
 #include "WifiConstants.h"
 #include "WifiHttpsServer.h"
-#include "WifiMode.h"
-
 #include <esp_http_server.h>
 #include <esp_wifi.h>
 #include <nvs_flash.h>
 
+#include "WifiCtrMode.h"
 #include "WifiHelper.h"
 
 
@@ -33,8 +32,8 @@
 class WifiEngine : public WifiHttpsServer
 	{
 	public:
-		WifiEngine(WifiListner * _listner, WifiMode _wifimode, const char * _pHostname, const char * _pAPName, const char * _pAPPAssword);
-		WifiEngine(WifiListner * _listner,WifiMode _wifimode, const char * _pHostname, const char * _pPassword);
+		WifiEngine(WifiListner * _listner, WifiCtrMode _wifimode, const char * _pHostname, const char * _pAPName, const char * _pAPPAssword);
+		WifiEngine(WifiListner * _listner,WifiCtrMode _wifimode, const char * _pHostname, const char * _pPassword);
 
 		virtual ~WifiEngine();
 
@@ -59,7 +58,7 @@ class WifiEngine : public WifiHttpsServer
 		void wifi_set_currentWifiEvent(int32_t _wifiEvent);
 
 	private:
-		WifiMode wifimode;
+		WifiCtrMode wifimode;
 		const char * pHostname;
 		const char * pAPName;				// device to connect to password (in STA mode)
 		const char * pPassword;				// OWN password (in AP mode) or device to connect to password (in STA mode)
@@ -76,7 +75,7 @@ class WifiEngine : public WifiHttpsServer
 
 		int numberOfsSTAConnectionRetries;
 
-		const char * get_wifimode_str(WifiMode _mode);
+		const char * get_wifimode_str(WifiCtrMode _mode);
 
 		esp_event_handler_instance_t * pInstance_got_ip;
 		esp_event_handler_instance_t * pInstance_any_id;
