@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+
+<link href="" rel="icon" type="image/x-icon" />
+<link type="text/css" href="dimlux.css" rel="stylesheet"/>
+<title>Ballast settings</title>
+</head>
+
+<body style = "background-color:black; color:#ccc; font-family: arial;">
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAfCAMAAACVvXI7AAADAFBMVEUAAAAAADMAAGYAAJkAAMwAAP8AMwAAMzMAM2YAM5kAM8wAM/8AZgAAZjMAZmYAZpkAZswAZv8AmQAAmTMAmWYAmZkAmcwAmf8AzAAAzDMAzGYAzJkAzMwAzP8A/wAA/zMA/2YA/5kA/8wA//8zAAAzADMzAGYzAJkzAMwzAP8zMwAzMzMzM2YzM5kzM8wzM/8zZgAzZjMzZmYzZpkzZswzZv8zmQAzmTMzmWYzmZkzmcwzmf8zzAAzzDMzzGYzzJkzzMwzzP8z/wAz/zMz/2Yz/5kz/8wz//9mAABmADNmAGZmAJlmAMxmAP9mMwBmMzNmM2ZmM5lmM8xmM/9mZgBmZjNmZmZmZplmZsxmZv9mmQBmmTNmmWZmmZlmmcxmmf9mzABmzDNmzGZmzJlmzMxmzP9m/wBm/zNm/2Zm/5lm/8xm//+ZAACZADOZAGaZAJmZAMyZAP+ZMwCZMzOZM2aZM5mZM8yZM/+ZZgCZZjOZZmaZZpmZZsyZZv+ZmQCZmTOZmWaZmZmZmcyZmf+ZzACZzDOZzGaZzJmZzMyZzP+Z/wCZ/zOZ/2aZ/5mZ/8yZ///MAADMADPMAGbMAJnMAMzMAP/MMwDMMzPMM2bMM5nMM8zMM//MZgDMZjPMZmbMZpnMZszMZv/MmQDMmTPMmWbMmZnMmczMmf/MzADMzDPMzGbMzJnMzMzMzP/M/wDM/zPM/2bM/5nM/8zM////AAD/ADP/AGb/AJn/AMz/AP//MwD/MzP/M2b/M5n/M8z/M///ZgD/ZjP/Zmb/Zpn/Zsz/Zv//mQD/mTP/mWb/mZn/mcz/mf//zAD/zDP/zGb/zJn/zMz/zP///wD//zP//2b//5n//8z///8AAACXVkuITUV6RT5sPDdeNDBQLClBJCEzHBolFBMWDAsHBAPUfWbUfWfUfGfUfGjUe2jVe2nVe2rVemvVeWvVeGzVd23Wdm7Wdm/WdW/VdHDObmy+ZmSuXFugVVWSTU2ERUZ2PT9nNTdYLTBKJig8HiAtFhgfDxHCaOGrAAAA2XRSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8A9EGGvAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAfxJREFUWIXtlj16wjAMhjkMWdBJWJql+CLN0ix9cgs6tB3o6PtwndrxnyRbAZqkCX34JiIUSa9tydls/o1eT6e3V6PD89POaOlyfi8DwuS4asu1Xbq6G5SDFLgOd8B1EYTJbVddrw7rVhCqj/VwjQP5JvoMWLAA15QglMqoDVzb+blmA8FAXoartlwwB9ZfglC1bfvisCbhWg6EczXNKK7VgDA1TdMfw+parrWCYB2PR8e1ryoRa+0gX17vSZ5rb7AQ1268YG5Vw1r6Kn6orE6QUhB9gPwDzBQcQXEbDVjOX4jNKrO/lRBJJYs+y9I+MBCrtXXU0fgpFsh6UR8BJHsrKNgcFUvn1sCX2ZOR/FqZnbDqglmVk+XM3KCmBYlVx+gUg4GgZAoVlCcb2sf0nhT7OpDwdvTE4bR/0FCIed8SGzL0F5QaMvqTLrQGyL0maPbL3vL2hzOpBnpEb2iTd/RIktdG9khwF+sdC4IGSn9eMci4HimB8Nl4TvssJQMUZxjEr5KfHhiEDBqpLenYRDVnJmBD/4zSZuPXDd8ujl9harEkkFoAg7Dhpjs/3EOS/tqkwb1Tyh/5I4ZpjdIKDQ5SfyNeBMGbj0Hyo0DlPxJkp7jeIZBfMLo5+eVPpoyCtBji1MqEp1b/DEpMMeyECoifIvizSWthfj20Bv0Azaw4f2xcq4IAAAAASUVORK5CYII=">
+
+<H1>Ballast settings</H1>
+
+<fieldset>
+<form id="changeForm" action="#">
+
+<table style="width:800px">
+<tr>
+<th style="width:250px"></th>
+<th style="width:250px"></th> 
+<th></th> 
+</tr>
+
+<tr>
+<td><label><b>Ballast name</b></label> </td>
+<td><input type="text" id="name" maxlength="32"></td>
+<td></td>
+</tr>
+<tr>
+<td><label><b>Ballast location</b></label></td>
+<td><input type="text" id="location" maxlength="32"></td>
+<td></td>
+</tr>
+<tr></tr>
+</table>
+
+<table style="width:800px">
+<tr>
+<th style="width:250px"></th>
+<th style="width:250px"></th> 
+
+<th></th> 
+</tr>
+<tr>
+<td><label><b>Steer mode</b></label></td>
+<td>
+<select id="steermode" onChange="steermodechanged(this.options[this.selectedIndex].value)" >
+<option value="on">Continues on</option>
+<option value="off">Continues off</option>
+<option value="wifi">Wifi mode</option>
+<option value="wired" selected>Wired mode</option>
+</select> 
+</td>
+<td></td>
+</tr>
+</table>
+
+
+<table id="maxitable1" style="width:460px;visibility:hidden">
+<tr>
+<th style="width:250px"></th>
+<th style="width:200px"></th> 
+<th style="width:10px"></th> 
+<th></th> 
+</tr>
+<tr>
+<td><label><b>Percentage max</b></label></td> 
+<td><input class="slidecontainer" type="range" min="50" max="120" value="70" id="perc"></td>
+<td> <span id="perc_display"></span></td>
+<td>%</td>
+</tr>
+</table>
+
+<table id="maxitable2" style="width:800px;visibility:hidden">
+<tr>
+<th style="width:250px"></th>
+<th style="width:50px"></th> 
+<th style="width:10px"></th> 
+<th style="width:50px"></th>
+<th style="width:20px"></th>
+<th style="width:50px"></th> 
+<th style="width:10px"></th> 
+<th style="width:50px"></th> 
+</tr>
+
+<tr>
+<td><label><b>Time on/off</b></label></td>
+<td><select id="timeonhour"></select></td> 	
+<td><label><b>:</b></label></td>    
+<td><select id="timeonmin"></select></td>
+<td><label><b>till</b></label></td>
+<td><select id="timeoffhour"></select></td>	
+<td><label><b>:</b></label></td> 	
+<td><select id="timeoffmin"></select></td>
+<td></td>
+</tr>
+</table>
+
+<table id="maxitable3" style="width:800px;visibility:hidden">
+<tr>
+<th style="width:250px"></th>
+<th style="width:250px"></th> 
+<th></th> 
+</tr>
+<tr>
+<td><label><b>Rise time</b></label></td>
+<td><select id="risetime"></select></td>
+</tr>
+<tr>
+<td><label><b>Fall time</b></label></td>
+<td><select id="falltime"></select></td>
+</tr>
+</table>
+
+<table id="maxitable4" style="width:460px;visibility:hidden">
+<tr>
+<th style="width:250px"></th>
+<th style="width:200px"></th> 
+<th style="width:10px"></th> 
+<th></th> 
+</tr>
+<tr>
+<td><label><b>Limit lo</b></label></td> 
+<td><input type="range" min="20" max="40" value="31" class="slidecontainer" id="limitlo"></td>
+<td> <span id="limitlo_display"></span></td>
+<td>°C</td>
+</tr>
+<tr>
+<td><label><b>Limit high</b></label></td> 
+<td><input type="range" min="22" max="42" value="33" class="slidecontainer" id="limithi"></td>
+<td> <span id="limithi_display"></span></td>
+<td>°C</td>
+</tr>
+<tr>
+<td><label><b>Limit shutdown</b></label></td> 
+<td><input type="range" min="24" max="44" value="35" class="slidecontainer" id="limitsh"></td>
+<td> <span id="limitsh_display"></span></td>
+<td>°C</td>
+</tr>
+</table>
+
+<BR>
+
+<input type="submit" value="submit"/>
+
+</form>
+
+</fieldset>
+
+<script type="text/javascript" src="stasetting.js"></script>
+
+<script>
+document.getElementById("changeForm").addEventListener("submit", (e) => {
+e.preventDefault(); 
+const formData = new FormData(e.target); 
+const data = Array.from(formData.entries()).reduce((memo, pair) => ({...memo, [pair[0]]: pair[1],  }), {}); 
+console.log(JSON.stringify(data));
+sendText(JSON.stringify(data));
+history.back();
+});
+</script>
+
+<script>
+var perc_slider = document.getElementById("perc");
+var perc_output = document.getElementById("perc_display");
+perc_output.innerHTML = perc_slider.value;
+
+perc_slider.oninput = function() 	
+	{
+  	perc_output.innerHTML = this.value;
+	}
+</script>
+
+<script>
+var limitlo_slider = document.getElementById("limitlo");
+var limitlo_output = document.getElementById("limitlo_display");
+limitlo_output.innerHTML = limitlo_slider.value;
+
+limitlo_slider.oninput = function() 	
+	{
+  	limitlo_output.innerHTML = this.value;
+	}
+</script>
+
+<script>
+var limithi_slider = document.getElementById("limithi");
+var limithi_output = document.getElementById("limithi_display");
+limithi_output.innerHTML = limithi_slider.value;
+
+limithi_slider.oninput = function() 	
+	{
+  	limithi_output.innerHTML = this.value;
+	}
+</script>
+
+<script>
+var limitsh_slider = document.getElementById("limitsh");
+var limitsh_output = document.getElementById("limitsh_display");
+limitsh_output.innerHTML = limitsh_slider.value;
+
+limitsh_slider.oninput = function() 	
+	{
+  	limitsh_output.innerHTML = this.value;
+	}
+</script>
+
+<script>
+initDropdownList( 'timeonhour', 00, 23, 1, 08 );
+initDropdownList( 'timeonmin', 00, 59, 1, 00 );
+initDropdownList( 'timeoffhour', 00, 23, 1, 20 );
+initDropdownList( 'timeoffmin', 00, 59, 1, 00 );
+initDropdownList( 'risetime', 00, 120, 10, 00 );
+initDropdownList( 'falltime', 00, 120, 10, 00 );
+</script>
+
+</body>
+</html>

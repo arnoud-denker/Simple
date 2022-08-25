@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<link href="" rel="icon" type="image/x-icon" />
+<link type="text/css" href="dimlux.css" rel="stylesheet"/>
+<title>Ballast status</title>
+</head>
+
+<!-- <body onload="setInterval('timerUp();',1000)" style = "background-color:black; color:#ccc; font-family: arial;"> -->
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAfCAMAAACVvXI7AAADAFBMVEUAAAAAADMAAGYAAJkAAMwAAP8AMwAAMzMAM2YAM5kAM8wAM/8AZgAAZjMAZmYAZpkAZswAZv8AmQAAmTMAmWYAmZkAmcwAmf8AzAAAzDMAzGYAzJkAzMwAzP8A/wAA/zMA/2YA/5kA/8wA//8zAAAzADMzAGYzAJkzAMwzAP8zMwAzMzMzM2YzM5kzM8wzM/8zZgAzZjMzZmYzZpkzZswzZv8zmQAzmTMzmWYzmZkzmcwzmf8zzAAzzDMzzGYzzJkzzMwzzP8z/wAz/zMz/2Yz/5kz/8wz//9mAABmADNmAGZmAJlmAMxmAP9mMwBmMzNmM2ZmM5lmM8xmM/9mZgBmZjNmZmZmZplmZsxmZv9mmQBmmTNmmWZmmZlmmcxmmf9mzABmzDNmzGZmzJlmzMxmzP9m/wBm/zNm/2Zm/5lm/8xm//+ZAACZADOZAGaZAJmZAMyZAP+ZMwCZMzOZM2aZM5mZM8yZM/+ZZgCZZjOZZmaZZpmZZsyZZv+ZmQCZmTOZmWaZmZmZmcyZmf+ZzACZzDOZzGaZzJmZzMyZzP+Z/wCZ/zOZ/2aZ/5mZ/8yZ///MAADMADPMAGbMAJnMAMzMAP/MMwDMMzPMM2bMM5nMM8zMM//MZgDMZjPMZmbMZpnMZszMZv/MmQDMmTPMmWbMmZnMmczMmf/MzADMzDPMzGbMzJnMzMzMzP/M/wDM/zPM/2bM/5nM/8zM////AAD/ADP/AGb/AJn/AMz/AP//MwD/MzP/M2b/M5n/M8z/M///ZgD/ZjP/Zmb/Zpn/Zsz/Zv//mQD/mTP/mWb/mZn/mcz/mf//zAD/zDP/zGb/zJn/zMz/zP///wD//zP//2b//5n//8z///8AAACXVkuITUV6RT5sPDdeNDBQLClBJCEzHBolFBMWDAsHBAPUfWbUfWfUfGfUfGjUe2jVe2nVe2rVemvVeWvVeGzVd23Wdm7Wdm/WdW/VdHDObmy+ZmSuXFugVVWSTU2ERUZ2PT9nNTdYLTBKJig8HiAtFhgfDxHCaOGrAAAA2XRSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8A9EGGvAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAfxJREFUWIXtlj16wjAMhjkMWdBJWJql+CLN0ix9cgs6tB3o6PtwndrxnyRbAZqkCX34JiIUSa9tydls/o1eT6e3V6PD89POaOlyfi8DwuS4asu1Xbq6G5SDFLgOd8B1EYTJbVddrw7rVhCqj/VwjQP5JvoMWLAA15QglMqoDVzb+blmA8FAXoartlwwB9ZfglC1bfvisCbhWg6EczXNKK7VgDA1TdMfw+parrWCYB2PR8e1ryoRa+0gX17vSZ5rb7AQ1268YG5Vw1r6Kn6orE6QUhB9gPwDzBQcQXEbDVjOX4jNKrO/lRBJJYs+y9I+MBCrtXXU0fgpFsh6UR8BJHsrKNgcFUvn1sCX2ZOR/FqZnbDqglmVk+XM3KCmBYlVx+gUg4GgZAoVlCcb2sf0nhT7OpDwdvTE4bR/0FCIed8SGzL0F5QaMvqTLrQGyL0maPbL3vL2hzOpBnpEb2iTd/RIktdG9khwF+sdC4IGSn9eMci4HimB8Nl4TvssJQMUZxjEr5KfHhiEDBqpLenYRDVnJmBD/4zSZuPXDd8ujl9harEkkFoAg7Dhpjs/3EOS/tqkwb1Tyh/5I4ZpjdIKDQ5SfyNeBMGbj0Hyo0DlPxJkp7jeIZBfMLo5+eVPpoyCtBji1MqEp1b/DEpMMeyECoifIvizSWthfj20Bv0Azaw4f2xcq4IAAAAASUVORK5CYII=">
+
+<H1>Ballast status</H1>
+
+<body onload="setInterval('timerUp();',1000)" style = "background-color:black; color:#ccc; font-family: arial;">
+
+<fieldset>
+<form id="statusForm">
+
+<table>
+<tr>
+<td><label><b>Ballast name</b></label></td>
+<td><label id="name" >....</label></td>
+</tr>
+
+<tr>
+<td><label><b>Ballast location</b></label></td>
+<td><label id="location" > ....</label></td>
+</tr>
+
+<tr> <td> <BR></td> <td> </td>  </tr>
+
+<tr>
+<td><label><b>Connected to AP</b></label></td>
+<td><label id="ap" > ....</label></td>
+</tr>
+
+<tr> <td> <BR></td> <td> </td>  </tr>
+
+<tr>
+<td><label><b>Steer mode</b></label></td>
+<td><label id="steermode" >...</label></td>
+</tr>
+
+<tr>
+<td><label><b>Control mode</b></label></td>
+<td><label id="runningstate" >...</label></td>
+</tr>
+
+<tr>
+<td><label><b>Status</b></label></td>
+<td><label id="hidstatus" >...</label></td>
+</tr>
+
+<tr> <td> <BR></td> <td> </td>  </tr>
+
+<tr>
+<td><label><b>Output percentage</b></label></td>
+<td><label id="output_p" >... %</label></td>
+</tr>
+
+<tr>
+<td><label><b>Output power</b></labe></td>
+<td><labell id="output_w" >.... W</label></td>
+</tr>
+
+<tr> <td> <BR></td> <td> </td>  </tr>
+
+<tr>
+<td><label><b>Temperature</b></label></td>
+<td><label id="tamb1" >... °C</label></td>
+</tr>
+
+<tr>
+<td><label><b>Time</b></label></td>
+<td><label id="currentime">.... </label></td>
+</tr>
+
+<tr> <td> <BR></td> <td> </td>  </tr>
+
+<tr>
+<td><label><b>Time left</b></label></td>
+<td><label id="timeleft" >... sec</label></td>
+</tr>
+
+<tr> <td> <BR></td> <td> </td>  </tr>
+
+</table>
+</form>
+
+<BR>
+
+<input type="button" value="Change settings" onclick="window.location.href='stasetting.html'">  
+
+</fieldset>
+
+<label id="error"> </label>
+
+<script type="text/javascript" src="staroot.js"></script>
+
+</body>
+</html>
