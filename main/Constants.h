@@ -8,8 +8,8 @@
 #define default_wifiAP_SSIDname_prefix "Ballast_"
 #define default_wifiAP_Password "voyager"
 
-#define default_wifiSTA_SSIDname "confucius"
-#define default_wifiSTA_Password "fUYw8zAK"
+#define default_wifiSTA_SSIDname "confucius.localdomain"
+#define default_wifiSTA_Password "wynvkwIX"
 
 #define WIFISTA_MAXIMUM_CONNECTION_RETRIES 10
 

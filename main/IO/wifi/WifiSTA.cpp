@@ -54,15 +54,13 @@ esp_err_t get_handlerSTA_SettingJS_(httpd_req_t *req)
 
 	void WifiSTA::staUserReceiveDataUpdateTask()
 		{
-		QueueHandle_t receivequeu = get_wsReceiveQueuHandle();
+		wsreceive_msg receivemessage;
 
-		if (receivequeu != NULL)
+		while (true)
 			{
-			LOG("Receive queue is avaible");
+			QueueHandle_t receivequeu = get_wsReceiveQueuHandle();
 
-			wsreceive_msg receivemessage;
-
-			while (true)
+			if (receivequeu != NULL)
 				{
 				if( xQueueReceive( receivequeu, &receivemessage, ( TickType_t ) 10 ) == pdPASS )
 					{
@@ -72,15 +70,8 @@ esp_err_t get_handlerSTA_SettingJS_(httpd_req_t *req)
 					{
 					LOG("No receive");
 					}
-
-				vTaskDelay(serverReceiveUpdatePeriod);
 				}
-			}
-		else
-			{
-
-			LOG("Receive queue not avaible");
-			while (true) { vTaskDelay(serverReceiveUpdatePeriod); }
+			vTaskDelay(serverReceiveUpdatePeriod);
 			}
 		}
 
@@ -98,17 +89,16 @@ esp_err_t get_handlerSTA_SettingJS_(httpd_req_t *req)
 
 	void WifiSTA::staUserSendDataUpdateTask()
 		{
-		QueueHandle_t sendqueu = get_wsSendQueuHandle();
+		int counter = 0;
+		char tmpbuf[256];
 
-		if (sendqueu != NULL)
+		xWSsendMessage message;
+
+		while(true)
 			{
-			int counter = 0;
+			QueueHandle_t sendqueu = get_wsSendQueuHandle();
 
-			char tmpbuf[256];
-
-			xWSsendMessage message;
-
-			while(true)
+			if (sendqueu != NULL)
 				{
 				counter++;
 
@@ -132,8 +122,7 @@ esp_err_t get_handlerSTA_SettingJS_(httpd_req_t *req)
 					//
 					//		cJSON_AddStringToObject(jsonDataToSend, "tamb1", 				pDataEngine_local->get_temperatureStr() );
 					//		cJSON_AddStringToObject(jsonDataToSend, "currentime", 			pMKii_local->get_pCurrentime_str() );
-
-						//	if (cJSON_AddStringToObject(jsonDataToSend, "timeleft", 			"101") != NULL)
+							//	if (cJSON_AddStringToObject(jsonDataToSend, "timeleft", 			"101") != NULL)
 					//
 					//		//=====================
 					//
@@ -147,9 +136,9 @@ esp_err_t get_handlerSTA_SettingJS_(httpd_req_t *req)
 					//		cJSON_AddStringToObject(jsonDataToSend, "rise", 			"20 min");
 					//		cJSON_AddStringToObject(jsonDataToSend, "fall", 			"20 min");
 					//
-					//		cJSON_AddStringToObject(jsonDataToSend, "limitlo", 			"30");
+				//		cJSON_AddStringToObject(jsonDataToSend, "limitlo", 			"30");
 					//		cJSON_AddStringToObject(jsonDataToSend, "limithi", 			"32");
-					//		cJSON_AddStringToObject(jsonDataToSend, "limitsh", 			"34");
+						//		cJSON_AddStringToObject(jsonDataToSend, "limitsh", 			"34");
 
 						{
 						if(cJSON_PrintPreallocated(jsonDataToSend, message.senddata, 255, true))
@@ -167,17 +156,11 @@ esp_err_t get_handlerSTA_SettingJS_(httpd_req_t *req)
 					{
 					LOG("HANDLE == MULL");
 					}
-
-				vTaskDelay(serverSendUpdatePeriod);
 				}
-			}
-		else
-			{
-			LOG("Send queue not avaible");
-			while (true) { vTaskDelay(serverSendUpdatePeriod); }
+
+			vTaskDelay(serverSendUpdatePeriod);
 			}
 		}
-
 
 //===========================================
 //===========================================

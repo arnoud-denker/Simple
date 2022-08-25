@@ -31,9 +31,6 @@ void socket_close_cleanup(void* context)
 
 WifiWebsocketHandler::WifiWebsocketHandler()
 	{
-	xsendQueue = xQueueCreate(1, sizeof(wssend_msg));
-	xreceiveQueue = xQueueCreate(1, sizeof(wsreceive_msg));
-
 	ws_data_holder.wssta_handle = NULL;
 	ws_data_holder.wssta_sockfd = 0;
 	}
@@ -85,13 +82,13 @@ void sendDataToServertask_(void* pvParameters)
 
 void WifiWebsocketHandler::sendDataToServerTask() //char * pDataToSend)
 	{
-	QueueHandle_t sendqueu = get_wsSendQueuHandle();
+	xsendQueue = xQueueCreate(1, sizeof(wssend_msg));
 
 	xWSsendMessage message;
 
 	while (true)
 		{
-		if(get_wssta_handle() != NULL && xQueueReceive( sendqueu, &message, ( TickType_t ) 10 ) == pdPASS)
+		if(get_wssta_handle() != NULL && xQueueReceive( xsendQueue, &message, ( TickType_t ) 10 ) == pdPASS)
 			{
 			httpd_ws_frame_t ws_frame = 	{
 											.final = true,
@@ -248,8 +245,13 @@ esp_err_t WifiWebsocketHandler::handlews(httpd_req_t *req)
 ////			}
 		}
 
-	QueueHandle_t receivequeu = get_wsReceiveQueuHandle();
-	if (receivequeu != NULL)
+
+	if (xreceiveQueue == NULL)
+		{
+		xreceiveQueue = xQueueCreate(1, sizeof(wsreceive_msg));
+		}
+
+	if (xreceiveQueue != NULL)
 		{
 		wsreceive_msg receivemessage;
 
@@ -259,7 +261,7 @@ esp_err_t WifiWebsocketHandler::handlews(httpd_req_t *req)
 		ws_pkt.payload = (uint8_t*)receivemessage.receiveddata;
 		if (httpd_ws_recv_frame(req, &ws_pkt, sizeof(receivemessage.receiveddata) ) == ESP_OK)
 			{
-			if (xQueueOverwrite( receivequeu, &receivemessage ) == pdFAIL)
+			if (xQueueOverwrite(xreceiveQueue, &receivemessage ) == pdFAIL)
 				{
 				ERR("Write into queui failed");
 				}

@@ -39,12 +39,12 @@ struct WS_data_holder
 
 typedef struct xWSsendMessage
 	{
-	char senddata[256];
+	char senddata[WS_QUEUE_SEND_BUFFER];
 	} wssend_msg;
 
 typedef struct xWSreceiveMessage
 	{
-	char receiveddata[256];
+	char receiveddata[WS_QUEUE_RECEIVER_BUFFER];
 	} wsreceive_msg;
 
 //===========================================
@@ -84,8 +84,8 @@ class WifiWebsocketHandler
 
 
 	private:
-		QueueHandle_t xreceiveQueue;
-		QueueHandle_t xsendQueue;
+		QueueHandle_t xreceiveQueue = NULL;
+		QueueHandle_t xsendQueue = NULL;
 
 		struct WS_data_holder ws_data_holder;
 

@@ -1,0 +1,7 @@
+/.cproject
+/.project
+/.settings/org.eclipse.core.resources.prefs
+/build/*
+/Makefile
+/_sdkconfig
+/sdkconfig.ci
