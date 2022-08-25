@@ -9,13 +9,13 @@ idf_component_register(SRCS
 INCLUDE_DIRS "."
 
 EMBED_FILES 
-"resources/resources_AP/aproot.html" 
-"resources/resources_STA/staroot.html"
-"resources/resources_STA/staroot.js"
-"resources/resources_STA/stasetting.js"
-"resources/resources_STA/stasetting.html"
-"resources/dimlux.css" 
-"resources/favicon.ico"
+"IO/wifi/resources/resources_AP/aproot.html" 
+"IO/wifi/resources/resources_STA/staroot.html"
+"IO/wifi/resources/resources_STA/staroot.js"
+"IO/wifi/resources/resources_STA/stasetting.js"
+"IO/wifi/resources/resources_STA/stasetting.html"
+"IO/wifi/resources/dimlux.css" 
+"IO/wifi/resources/favicon.ico"
 
 REQUIRES
 "json" 
